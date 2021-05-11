@@ -1,0 +1,26 @@
+.row{
+  display: flex;
+  box-sizing: border-box;
+}
+div{
+  padding: 5px;
+}
+.title{
+  display: flex;
+  width: 50%;
+}
+.price{
+  width: 15%;
+}
+.total{
+  width: 10%;
+  color: darkgreen;
+}
+.completed{
+  text-decoration: line-through;
+  color: gray;
+}
+.completed .total{
+  color: gray;
+}
+
