@@ -24,25 +24,25 @@ export class ItemsComponent implements OnInit {
         completed: false
       },
       {
-        id: 0,
+        id: 1,
         title: 'pera',
         price: 15,
         quantity: 6,
         completed: true
       },
       {
-        id: 0,
+        id: 2,
         title: 'mango',
         price: 6,
         quantity: 6,
-        completed: true
+        completed: false
       },
       {
-        id: 0,
+        id: 3,
         title: 'platano',
         price: 10,
         quantity: 2,
-        completed: true
+        completed: false
       }
     ];
     this.getTotal();
@@ -53,6 +53,15 @@ export class ItemsComponent implements OnInit {
       .filter(x => !x.completed)
       .map(x => x.price * x.quantity)
       .reduce((acc, item) => acc += item, 0);
+  }
+
+  toggleItem(item: Item) {
+    this.getTotal();
+  }
+
+  deleteItem(item: Item) {
+    this.items = this.items.filter(x => x.id !== item.id);
+    this.getTotal();
   }
 
 
