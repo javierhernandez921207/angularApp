@@ -9,6 +9,7 @@ import {Item} from "../../models/Item";
 export class ItemsComponent implements OnInit {
 
   items: Item[] = [];
+  total: number = 0;
 
   constructor() {
   }
@@ -28,8 +29,31 @@ export class ItemsComponent implements OnInit {
         price: 15,
         quantity: 6,
         completed: true
+      },
+      {
+        id: 0,
+        title: 'mango',
+        price: 6,
+        quantity: 6,
+        completed: true
+      },
+      {
+        id: 0,
+        title: 'platano',
+        price: 10,
+        quantity: 2,
+        completed: true
       }
     ];
+    this.getTotal();
   }
+
+  getTotal() {
+    this.total = this.items
+      .filter(x => !x.completed)
+      .map(x => x.price * x.quantity)
+      .reduce((acc, item) => acc += item, 0);
+  }
+
 
 }

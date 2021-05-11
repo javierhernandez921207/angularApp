@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import {RouterModule} from "@angular/router";
 import { ItemsComponent } from './components/items/items.component';
 import { ItemComponent } from './components/item/item.component';
+import { TotalComponent } from './components/total/total.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

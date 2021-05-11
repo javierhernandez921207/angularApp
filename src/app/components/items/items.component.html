@@ -1,4 +1,6 @@
 <div>
-  <app-item *ngFor="let item of items" [item]="item">
+  <app-total mensaje="Total por pagar: " [total]="total"></app-total>
+  <app-item *ngFor="let item of items"
+            [item]="item">
   </app-item>
 </div>
